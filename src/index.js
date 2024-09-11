@@ -8,10 +8,19 @@ export const server = "http://localhost:8090"
 export const Context = createContext({});
 const AppWrapper = ()=>{
   const [userData,setUserData] = useState("");
+  const [mediData,setMediData] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [hosp, setHosp] = useState(true);
   return(
     <Context.Provider value={{
       userData,
       setUserData,
+      mediData,
+      setMediData,
+      loading,
+      setLoading,
+      hosp,
+      setHosp
     }}>
       <App/>  
     </Context.Provider>

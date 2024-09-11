@@ -22,13 +22,11 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      // Check if the user already exists
       try {
         await axios.get(`${server}/user/user/${email}`, { withCredentials: true });
         toast.error("User already exists");
       } catch (error) {
         if (error.response && error.response.status === 404) {
-          // User does not exist, proceed to add user
           try {
             const { data } = await axios.post(
               `${server}/user/add`,

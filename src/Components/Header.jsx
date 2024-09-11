@@ -62,6 +62,16 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Features
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Marketplace
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Company
+          </a>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Services
@@ -105,16 +115,6 @@ export default function Example() {
               </div>
             </PopoverPanel>
           </Popover>
-
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
-          </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link to={"/login"} className="text-sm font-semibold leading-6 text-gray-900">

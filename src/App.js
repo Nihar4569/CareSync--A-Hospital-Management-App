@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { useContext } from 'react';
 import { Context } from '.';
 import Dashboard from './Pages/Dashboard';
+import Hospital from './Pages/Hospital';
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/dash" element={<Dashboard/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/hospital" element={<Hospital/>}/>
         </Routes>
       </Router>
     </div>
