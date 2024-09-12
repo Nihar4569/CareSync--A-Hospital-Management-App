@@ -4,6 +4,7 @@ import Header from '../Components/Header';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
+import Loader from '../Components/Loader';
 
 export default function Dashboard() {
   const { userData, mediData, setMediData, loading, setLoading, hosp, setHosp } = useContext(Context);
@@ -42,7 +43,10 @@ export default function Dashboard() {
   };
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div className='flex items-center justify-center h-screen'>
+    <Loader />
+  </div>
+  
   }
 
   return (

@@ -1,8 +1,8 @@
 'use client'
-import Logo from "../Pages/Images/PngItem_6106545.png"
+import Logo from "../Pages/Images/logo1.png"
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {
   Dialog,
   DialogPanel,
@@ -24,6 +24,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Context } from "..";
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of Hospitals', href: '#', icon: ChartPieIcon },
@@ -39,16 +40,23 @@ const callsToAction = [
 export default function Example() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+  const { userData, setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp, adata, setAdata } = useContext(Context);
+  const logouthandle = (e) => {
+    e.preventDefault();
+    setUserData("");
+    setAdata("")
+    navigate("/")
+  }
   return (
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
 
-          <Link to="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="absolute top-0 left-0 m-1.5 p-1.5 z-50">
             <span className="sr-only">Your Company</span>
-            <img alt="" src={Logo} className="h-8 w-auto" />
+            <img alt="" src={Logo} className="h-16 w-auto" />
           </Link>
+
 
         </div>
         <div className="flex lg:hidden">
@@ -62,7 +70,7 @@ export default function Example() {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          
+
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Features
           </a>
@@ -117,10 +125,19 @@ export default function Example() {
           </Popover>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to={"/login"} className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+          {(userData || adata) ? (
+            <Link onClick={logouthandle} className="text-sm font-semibold leading-6 text-gray-900">
+              Sign out <span aria-hidden="true">&rarr;</span>
+            </Link>
+          ) : (
+            <Link to={"/all"} className="text-sm font-semibold leading-6 text-gray-900">
+              Log in <span aria-hidden="true">&rarr;</span>
+            </Link>
+          )}
+
+
         </div>
+
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
         <div className="fixed inset-0 z-10" />

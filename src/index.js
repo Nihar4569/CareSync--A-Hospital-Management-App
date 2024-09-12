@@ -9,8 +9,10 @@ export const Context = createContext({});
 const AppWrapper = ()=>{
   const [userData,setUserData] = useState("");
   const [mediData,setMediData] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [hosp, setHosp] = useState(true);
+  const [hdata, setHdata] = useState(true);
+  const [adata, setAdata] = useState(true);
   return(
     <Context.Provider value={{
       userData,
@@ -20,7 +22,11 @@ const AppWrapper = ()=>{
       loading,
       setLoading,
       hosp,
-      setHosp
+      setHosp,
+      hdata,
+      setHdata,
+      adata,
+      setAdata
     }}>
       <App/>  
     </Context.Provider>

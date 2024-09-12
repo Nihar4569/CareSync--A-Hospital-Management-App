@@ -4,12 +4,14 @@ import axios from 'axios';
 import { Context, server } from '..';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../Components/Loader';
+import ulogo from './Images/ulogin.gif'
 
 
 export default function () {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const {userData,setUserData} = useContext(Context)
+  const { userData,setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp } = useContext(Context);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,14 +22,17 @@ export default function () {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       const { data } = await axios.get(`${server}/user/user/${email}`, { withCredentials: true });
       if (data.password == password) {
         setUserData(data);
         toast.success(`Welcome ${userData.name}`);
+        setLoading(false);
       }
       else{
         setUserData("");
         toast.error("Incorrect Password")
+        setLoading(false);
       }
     } catch (error) {
       if (error.response && error.response.status === 404) {
@@ -35,17 +40,24 @@ export default function () {
       } else {
         toast.error("An error occurred");
       }
+      setLoading(false);
     }
   };
   const register = (e)=>{
     e.preventDefault();
     navigate("/register")
   }
+  if (loading) {
+    return <div className='flex items-center justify-center h-screen'>
+    <Loader />
+  </div>
+  
+  }
   return (
     <>
     <Header/>
     <div class="font-[sans-serif]">
-      <div class="min-h-screen flex fle-col items-center justify-center py-6 px-4">
+      <div class="min-h-screen flex flex-col items-center justify-center py-6 px-4">
         <div class="grid md:grid-cols-2 items-center gap-4 max-w-6xl w-full">
           <div class="border border-gray-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-md:mx-auto">
             <form class="space-y-4">
@@ -96,11 +108,12 @@ export default function () {
 
               <p onClick={register} class="text-sm !mt-8 text-center text-gray-800">Don't have an account <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</a></p>
             </form>
-          </div>
-          <div class="lg:h-[400px] md:h-[300px] max-md:mt-8">
-            <img src="https://readymadeui.com/login-image.webp" class="w-full h-full max-md:w-4/5 mx-auto block object-cover" alt="Dining Experience" />
-          </div>
-        </div>
+            </div>
+  <div class="lg:h-[500px] md:h-[500px] max-md:mt-8 max-md:w-full relative">
+    <img src={ulogo} class="object-contain w-full h-full block absolute inset-0" alt="Login Graphic" />
+  </div>
+</div>
+
       </div>
     </div>
     </>

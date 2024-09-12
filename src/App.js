@@ -8,6 +8,10 @@ import { useContext } from 'react';
 import { Context } from '.';
 import Dashboard from './Pages/Dashboard';
 import Hospital from './Pages/Hospital';
+import Hregister from './Pages/Hregister';
+import Hdash from './Pages/Hdash';
+import AllLogins from './Pages/AllLogins';
+import Alogin from './Pages/Alogin';
 
 
 
@@ -19,10 +23,13 @@ function App() {
       <Toaster/>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/all" element={<AllLogins/>}/>
           <Route path="/dash" element={<Dashboard/>}/>
           <Route path="/register" element={<Register/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/user" element={<Login/>}/>
           <Route path="/hospital" element={<Hospital/>}/>
+          <Route path="/alogin" element={<Alogin/>}/>
+          <Route path="/hdash" element={<Hdash/>}/>
         </Routes>
       </Router>
     </div>

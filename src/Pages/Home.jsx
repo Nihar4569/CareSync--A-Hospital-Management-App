@@ -22,7 +22,7 @@ export default function Home() {
         <p className="text-lg text-gray-600 mb-6">
           Efficiently manage hospital operations, track patient records, and streamline administrative tasks with ease.
         </p>
-        <button onClick={()=>navigate("/login")} className="bg-teal-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-teal-600 transition duration-300">
+        <button onClick={()=>navigate("/all")} className="bg-teal-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-teal-600 transition duration-300">
           Get Started
         </button>
       </div>
