@@ -40,7 +40,7 @@ const callsToAction = [
 export default function Example() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { userData, setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp, adata, setAdata, setDdata ,ddata } = useContext(Context);
+  const { userData, setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp, adata, setAdata, setDdata, ddata } = useContext(Context);
   const logouthandle = (e) => {
     e.preventDefault();
     setUserData("");
@@ -206,7 +206,15 @@ export default function Example() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                  {(userData || adata || ddata) ? (
+                    <Link onClick={logouthandle} className="text-sm font-semibold leading-6 text-gray-900">
+                      Sign out <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  ) : (
+                    <Link to={"/all"} className="text-sm font-semibold leading-6 text-gray-900">
+                      Log in <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  )}
                 </Link>
               </div>
             </div>

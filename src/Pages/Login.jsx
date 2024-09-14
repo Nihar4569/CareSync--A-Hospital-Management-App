@@ -28,7 +28,7 @@ export default function () {
       const { data } = await axios.get(`${server}/user/user/${email}`, { withCredentials: true });
       if (data.password == password) {
         setUserData(data);
-        toast.success(`Welcome ${userData.name}`);
+        toast.success(`Welcome ${data.name}`);
         setLoading(false);
       }
       else{
