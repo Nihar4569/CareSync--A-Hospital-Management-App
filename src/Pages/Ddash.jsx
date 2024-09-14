@@ -303,10 +303,7 @@ const DoctorDashboard = () => {
         const fetchDoctorData = async () => {
             try {
                 const doctorRes = await axios.get(`${server}/hosp/doctor/find/${ddata.email}`);
-                setDoctorData(doctorRes.data);
-                console.log("hname "+doctorRes.data.hname);
-                
-
+                setDoctorData(doctorRes.data);                
                 const hospitalDataRes = await axios.get(`${server}/hosp/find/${doctorRes.data.hname}`);
                 const medicineRes = await axios.get(`${server}/hosp/medi`);
                 const patientRes = await axios.get(`${server}/hosp/pati`);
