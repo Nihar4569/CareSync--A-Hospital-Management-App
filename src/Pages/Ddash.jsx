@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { PlusCircle, CheckCircle } from 'lucide-react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import Header from '../Components/Header';
-import { Context } from '..';
+import { Context, server } from '..';
 import audit from  '../Components/Audit'
 
 
@@ -302,12 +302,12 @@ const DoctorDashboard = () => {
     useEffect(() => {
         const fetchDoctorData = async () => {
             try {
-                const doctorRes = await axios.get(`http://localhost:8090/hosp/doctor/find/${ddata.email}`);
+                const doctorRes = await axios.get(`${server}/hosp/doctor/find/${ddata.email}`);
                 setDoctorData(doctorRes.data);
 
-                const hospitalDataRes = await axios.get(`http://localhost:8090/hosp/find/${doctorRes.data.hname}`);
-                const medicineRes = await axios.get('http://localhost:8090/hosp/medi');
-                const patientRes = await axios.get('http://localhost:8090/hosp/pati');
+                const hospitalDataRes = await axios.get(`${server}hosp/find/${doctorRes.data.hname}`);
+                const medicineRes = await axios.get(`${server}/hosp/medi`);
+                const patientRes = await axios.get(`${server}/hosp/pati`);
 
                 setMedicines(medicineRes.data.filter(med => med.hname === doctorRes.data.hname));
                 setPatients(patientRes.data.filter(pat => pat.hname === doctorRes.data.hname));
@@ -343,7 +343,7 @@ const DoctorDashboard = () => {
 
     const handleAddPatient = async (newPatient) => {
         try {
-            await axios.post('http://localhost:8090/hosp/pati', newPatient);
+            await axios.post(`${server}0/hosp/pati`, newPatient);
         } catch (error) {
             console.error('Error registering patient:', error);
         }

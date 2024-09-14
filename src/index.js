@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+const apiUrl = process.env.REACT_APP_BACKEND;
 
-export const server = "http://localhost:8090"
+
+export const server = apiUrl
 export const Context = createContext({});
 const AppWrapper = ()=>{
   const [userData,setUserData] = useState("");

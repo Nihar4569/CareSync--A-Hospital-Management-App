@@ -3,7 +3,7 @@ import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import Header from '../Components/Header';
-import { Context } from '..';
+import { Context, server } from '..';
 import { Pie } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
@@ -229,9 +229,9 @@ const Sadmin = () => {
     const fetchData = async () => {
       try {
         const [auditsRes, hospitalsRes, doctorsRes] = await Promise.all([
-          axios.get('http://localhost:8090/audit/all'),
-          axios.get('http://localhost:8090/hosp/all'),
-          axios.get('http://localhost:8090/hosp/doctor')
+          axios.get(`${server}/audit/all`),
+          axios.get(`${server}/hosp/all`),
+          axios.get(`${server}/hosp/doctor`)
         ]);
 
         // Sort audits by date and time in descending order (newest first)

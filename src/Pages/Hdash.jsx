@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, User, Calendar, Phone, Mail, MapPin, Bed, PlusCircle, CheckCircle } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Header from '../Components/Header'
-import { Context } from '..';
+import { Context, server } from '..';
 
 
 const PatientCard = ({ patient }) => (
@@ -229,9 +229,9 @@ const HospitalSuperAdminDashboard = () => {
         const fetchHospitalData = async () => {
             try {
                 const [patientsRes, hospitalRes, doctorsRes] = await Promise.all([
-                    axios.get('http://localhost:8090/hosp/pati'),
-                    axios.get(`http://localhost:8090/hosp/find/${adata.hname}`),
-                    axios.get('http://localhost:8090/hosp/doctor')
+                    axios.get(`${server}/hosp/pati`),
+                    axios.get(`${server}/hosp/find/${adata.hname}`),
+                    axios.get(`${server}/hosp/doctor`)
                 ]);
                 setPatients(patientsRes.data);
                 setHospitalData(hospitalRes.data);
@@ -271,7 +271,7 @@ const HospitalSuperAdminDashboard = () => {
 
     const handleAddDoctor = async (newDoctor) => {
         try {
-            await axios.post('http://localhost:8090/hosp/doctor', newDoctor);
+            await axios.post(`${server}/hosp/doctor`, newDoctor);
             setDoctors([...doctors, newDoctor]);
         } catch (error) {
             console.error('Error adding doctor:', error);

@@ -105,7 +105,7 @@ export default function Hospital() {
       const [medicinesRes, hospitalRes, doctorsRes] = await Promise.all([
         axios.get(`${server}/hosp/medi`),
         axios.get(`${server}/hosp/find/${hosp}`),
-        axios.get('http://localhost:8090/hosp/doctor')
+        axios.get(`${server}/hosp/doctor`)
       ]);
       setMedicines(medicinesRes.data || []);
       setHdata(hospitalRes.data || {});
