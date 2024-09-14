@@ -25,7 +25,10 @@ export default function () {
     try {
       setLoading(true)
       const { data } = await axios.get(`${server}/hosp/govt/${email}`, { withCredentials: true });
-      if (data.password == password) {
+      if(!data){
+        toast.error("backend error")
+      }
+      else if (data.password == password) {
         
           setAdata(data);
           toast.success(`Welcome ${data.hname}`);
