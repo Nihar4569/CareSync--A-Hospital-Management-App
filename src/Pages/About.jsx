@@ -97,16 +97,15 @@ const About = () => {
                 transition={{ delay: 0.8, duration: 0.8 }}
               >
                 <motion.p className="text-lg" {...fadeInUp} transition={{ delay: 1 }}>
-                  I'm a passionate software developer with a keen interest in creating efficient and innovative solutions. 
-                  My expertise spans across various programming languages and frameworks, allowing me to tackle diverse challenges in the world of software development.
+                  Software Engineer skilled in full-stack development, cloud technologies, and Java programming. Adept at designing, building, and supporting applications to meet business requirements.
                 </motion.p>
 
                 <motion.p className="text-lg" {...fadeInUp} transition={{ delay: 1.2 }}>
-                  When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-                  or sharing my knowledge with the developer community.
+                  Winner of the Smart India Hackathon 2022, demonstrating strong problem-solving skills and a passion for technology. Enthusiastic about coding, eager to tackle impactful projects, and committed to contributing to team success in dynamic environments.
                 </motion.p>
 
-                <motion.div 
+
+                <motion.div
                   className="flex justify-center space-x-4 mt-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -133,7 +132,7 @@ const About = () => {
                 </motion.div>
               </motion.div>
             </div>
-            <motion.p 
+            <motion.p
               className="text-sm mt-8 text-gray-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

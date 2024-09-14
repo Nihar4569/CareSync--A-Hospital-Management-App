@@ -53,8 +53,8 @@ export default function Example() {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
 
-          <Link to="/" className="absolute top-0 left-0 m-1.5 p-1.5 z-50">
-            <span className="sr-only">Your Company</span>
+          <Link to="/about" className="absolute top-0 left-0 m-1.5 p-1.5 z-50">
+            <span className="sr-only">About</span>
             <img alt="" src={Logo} className="h-16 w-auto" />
           </Link>
 
@@ -194,12 +194,12 @@ export default function Example() {
                 >
                   Marketplace
                 </a>
-                <a
-                  href="#"
+                <Link to={"/about"}
+                  
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Company
-                </a>
+                  About
+                </Link>
               </div>
               <div className="py-6">
                 <Link to={"/all"}
