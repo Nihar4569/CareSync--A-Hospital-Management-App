@@ -11,7 +11,13 @@ import Hospital from './Pages/Hospital';
 import Hregister from './Pages/Hregister';
 import Hdash from './Pages/Hdash';
 import AllLogins from './Pages/AllLogins';
-import Alogin from './Pages/Alogin';
+import Alogin from './Pages/Hlogin';
+import Ddash from './Pages/Ddash';
+import Dlogin from './Pages/Dlogin';
+import Sadmin from './Pages/Sadmin';
+import Glogin from './Pages/Glogin';
+import About from './Pages/About';
+import Hlogin from './Pages/Hlogin';
 
 
 
@@ -28,8 +34,14 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/user" element={<Login/>}/>
           <Route path="/hospital" element={<Hospital/>}/>
-          <Route path="/alogin" element={<Alogin/>}/>
+          <Route path="/hlogin" element={<Hlogin/>}/>
           <Route path="/hdash" element={<Hdash/>}/>
+          <Route path="/ddash" element={<Ddash/>}/>
+          <Route path="/dlogin" element={<Dlogin/>}/>
+          <Route path="/govt" element={<Sadmin/>}/>
+          <Route path="/glogin" element={<Glogin/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/hregister" element={<Hregister/>}/>
         </Routes>
       </Router>
     </div>

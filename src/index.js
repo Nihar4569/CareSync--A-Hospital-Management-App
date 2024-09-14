@@ -10,9 +10,10 @@ const AppWrapper = ()=>{
   const [userData,setUserData] = useState("");
   const [mediData,setMediData] = useState("");
   const [loading, setLoading] = useState(false);
-  const [hosp, setHosp] = useState(true);
-  const [hdata, setHdata] = useState(true);
-  const [adata, setAdata] = useState(true);
+  const [hosp, setHosp] = useState("");
+  const [hdata, setHdata] = useState("");
+  const [adata, setAdata] = useState("");
+  const [ddata, setDdata] = useState("");
   return(
     <Context.Provider value={{
       userData,
@@ -26,7 +27,9 @@ const AppWrapper = ()=>{
       hdata,
       setHdata,
       adata,
-      setAdata
+      setAdata,
+      ddata, 
+      setDdata
     }}>
       <App/>  
     </Context.Provider>

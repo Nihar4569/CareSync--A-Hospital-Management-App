@@ -73,7 +73,7 @@ export default function Hregister() {
 
   const loginHandler = (e) => {
     e.preventDefault();
-    navigate("/login");
+    navigate("/hlogin");
   };
 
   return (
@@ -92,7 +92,7 @@ export default function Hregister() {
           <div className="flex items-center p-6 h-full w-full">
             <form className="max-w-lg w-full mx-auto" onSubmit={submitHandler}>
               <div className="mb-12">
-                <h3 className="text-blue-500 md:text-3xl text-2xl font-extrabold max-md:text-center">Register Hospital</h3>
+                <h3 className="text-purple-800 md:text-3xl text-2xl font-extrabold max-md:text-center">Register Hospital</h3>
               </div>
 
               {/* Hospital Name */}
@@ -218,7 +218,7 @@ export default function Hregister() {
               <div className="mt-12">
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 text-sm tracking-wider font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white focus:outline-none"
+                  className="w-full py-3 px-6 text-sm tracking-wider font-semibold rounded-md bg-purple-600 hover:bg-purple-700 text-white focus:outline-none"
                 >
                   Register Hospital
                 </button>

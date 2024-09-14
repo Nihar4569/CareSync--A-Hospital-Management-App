@@ -40,11 +40,12 @@ const callsToAction = [
 export default function Example() {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { userData, setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp, adata, setAdata } = useContext(Context);
+  const { userData, setUserData, mediData, setMediData, loading, setLoading, hosp, setHosp, adata, setAdata, setDdata ,ddata } = useContext(Context);
   const logouthandle = (e) => {
     e.preventDefault();
     setUserData("");
     setAdata("")
+    setDdata("")
     navigate("/")
   }
   return (
@@ -71,15 +72,15 @@ export default function Example() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
+          <a href="https://delhi.gov.in/" className="text-sm font-semibold leading-6 text-gray-900">
+            Delhi Govt
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Marketplace
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
-          </a>
+          <Link to={"/about"} className="text-sm font-semibold leading-6 text-gray-900">
+            About
+          </Link>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
               Services
@@ -100,10 +101,10 @@ export default function Example() {
                       <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} className="block font-semibold text-gray-900">
+                      <Link to={"/dash"} className="block font-semibold text-gray-900">
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
+                      </Link>
                       <p className="mt-1 text-gray-600">{item.description}</p>
                     </div>
                   </div>
@@ -125,7 +126,7 @@ export default function Example() {
           </Popover>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          {(userData || adata) ? (
+          {(userData || adata || ddata) ? (
             <Link onClick={logouthandle} className="text-sm font-semibold leading-6 text-gray-900">
               Sign out <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -201,7 +202,7 @@ export default function Example() {
                 </a>
               </div>
               <div className="py-6">
-                <Link to={"/login"}
+                <Link to={"/all"}
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >

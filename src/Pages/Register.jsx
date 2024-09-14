@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Context, server } from '..';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import audit from  '../Components/Audit'
 
 
 export default function Register() {
@@ -15,6 +16,7 @@ export default function Register() {
   const [tnc, setTnc] = useState(false);
   const {userData,setUserData} = useContext(Context)
   const navigate = useNavigate();
+
 
 
 

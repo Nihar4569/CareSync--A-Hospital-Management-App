@@ -17,7 +17,7 @@ export default function Home() {
           className="mx-auto mb-4 w-78 h-78 object-contain"
         />
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-          Welcome to the Hospital Management Site
+          Delhi Hospital Management 
         </h1>
         <p className="text-lg text-gray-600 mb-6">
           Efficiently manage hospital operations, track patient records, and streamline administrative tasks with ease.

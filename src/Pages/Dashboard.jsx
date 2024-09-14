@@ -5,6 +5,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router';
 import Loader from '../Components/Loader';
+import audit from  '../Components/Audit'
+
 
 export default function Dashboard() {
   const { userData, mediData, setMediData, loading, setLoading, hosp, setHosp } = useContext(Context);
@@ -54,12 +56,16 @@ export default function Dashboard() {
       <Header />
       <div className="bg-gray-50 min-h-screen p-4 sm:p-6">
         <div className="max-w-7xl mx-auto py-6">
-          <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 animate-fadeInDown">
-            Welcome, {userData?.name}
-          </h1>
-          <p className="text-sm sm:text-lg text-gray-600 mb-8">
-            {`Email: ${userData?.email}`}
-          </p>
+        {userData ? (
+    <>
+      <h1 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 animate-fadeInDown">
+        Welcome, {userData.name}
+      </h1>
+      <p className="text-sm sm:text-lg text-gray-600 mb-8">
+        {`Email: ${userData.email}`}
+      </p>
+    </>
+  ) : null}
 
           {/* Search and Filter Options */}
           <div className="flex flex-col sm:flex-row justify-between items-center mb-6">

@@ -12,7 +12,23 @@ const AllLogins = () => {
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
             <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-md">
                 <h1 className="text-2xl font-bold text-teal-600 mb-6 text-center">Login</h1>
+                
                 <div className="space-y-4" >
+                <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="flex flex-col items-center"
+                    >
+                        <Link
+                            to="/glogin"
+                            className="flex items-center w-full p-4 bg-teal-600 text-white rounded-lg shadow-md hover:bg-teal-700 transition"
+                        >
+                            <Hospital className="w-6 h-6 mr-2" />
+                            <span>Delhi Govt.</span>
+                        </Link>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -20,7 +36,7 @@ const AllLogins = () => {
                         className="flex flex-col items-center"
                     >
                         <Link
-                            to="/hospital-staff-login"
+                            to="/dlogin"
                             className="flex items-center w-full p-4 bg-teal-600 text-white rounded-lg shadow-md hover:bg-teal-700 transition"
                         >
                             <Hospital className="w-6 h-6 mr-2" />
@@ -50,13 +66,14 @@ const AllLogins = () => {
                         className="flex flex-col items-center"
                     >
                         <Link
-                            to="/alogin"
+                            to="/hlogin"
                             className="flex items-center w-full p-4 bg-teal-600 text-white rounded-lg shadow-md hover:bg-teal-700 transition"
                         >
                             <FileText className="w-6 h-6 mr-2" />
-                            <span>Admin Login</span>
+                            <span>Hospital Admin Login</span>
                         </Link>
                     </motion.div>
+                    
                 </div>
             </div>
         </div>
