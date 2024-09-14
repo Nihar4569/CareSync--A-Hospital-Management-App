@@ -70,7 +70,7 @@ const AddPatientForm = ({ onClose, onSubmit, hospitalName, doctorName }) => {
 
         try {
             await onSubmit(formData);
-            await axios.get(`http://localhost:8090/hosp/updatebed/${hospitalName}/inc`); // Increase bbed by one
+            await axios.get(`${server}/hosp/updatebed/${hospitalName}/inc`); // Increase bbed by one
             setIsSuccess(true);
             setTimeout(() => {
                 onClose();
@@ -304,8 +304,10 @@ const DoctorDashboard = () => {
             try {
                 const doctorRes = await axios.get(`${server}/hosp/doctor/find/${ddata.email}`);
                 setDoctorData(doctorRes.data);
+                console.log("hname "+doctorRes.data.hname);
+                
 
-                const hospitalDataRes = await axios.get(`${server}hosp/find/${doctorRes.data.hname}`);
+                const hospitalDataRes = await axios.get(`${server}/hosp/find/${doctorRes.data.hname}`);
                 const medicineRes = await axios.get(`${server}/hosp/medi`);
                 const patientRes = await axios.get(`${server}/hosp/pati`);
 
