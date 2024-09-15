@@ -260,9 +260,9 @@ const Sadmin = () => {
 
   const handleVerifyToggle = async (email) => {
     try {
-      await axios.get(`http://localhost:8090/hosp/verify/${email}`);
+      await axios.get(`${server}/hosp/verify/${email}`);
       // Refetch data after verification status is toggled
-      const response = await axios.get('http://localhost:8090/hosp/all');
+      const response = await axios.get(`${server}/hosp/all`);
       setHospitals(response.data);
       setVerifiedHospitals(response.data.filter(hospital => hospital.hverified));
       setPendingHospitals(response.data.filter(hospital => !hospital.hverified));
