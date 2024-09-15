@@ -69,12 +69,12 @@ export default function Home() {
         <div className="bg-white p-6 rounded-lg shadow-lg text-center w-full max-w-2xl mb-8">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">Key Features</h2>
           <ul className="text-left text-gray-600 space-y-4">
-            <li>✔️ Hospital Bed Management: Real-time tracking of hospital beds and availability for both general and emergency cases.</li>
-            <li>✔️ Patient Records Management: Easily access and manage patient information, treatment history, and medical records.</li>
-            <li>✔️ Doctor’s Dashboard: Dedicated section for doctors to view available beds, manage patient registrations, and review medicine stocks.</li>
-            <li>✔️ Medicine Inventory: Track and manage the availability of medicines in each hospital.</li>
-            <li>✔️ Admin Panel: Verify hospitals, manage users, and monitor hospital performance through an interactive dashboard.</li>
-            <li>✔️ Audit Logging: Keep track of all actions within the system, ensuring transparency and accountability.</li>
+            <li><b>✔️ Hospital Bed Management:</b> Real-time tracking of hospital beds and availability for both general and emergency cases.</li>
+            <li><b>✔️ Patient Records Management:</b> Easily access and manage patient information, treatment history, and medical records.</li>
+            <li><b>✔️ Doctor’s Dashboard:</b> Dedicated section for doctors to view available beds, manage patient registrations, and review medicine stocks.</li>
+            <li><b>✔️ Medicine Inventory:</b> Track and manage the availability of medicines in each hospital.</li>
+            <li><b>✔️ Admin Panel:</b> Verify hospitals, manage users, and monitor hospital performance through an interactive dashboard.</li>
+            <li><b>✔️ Audit Logging:</b> Keep track of all actions within the system, ensuring transparency and accountability.</li>
           </ul>
         </div>
 
