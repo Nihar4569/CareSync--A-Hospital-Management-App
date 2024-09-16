@@ -79,7 +79,7 @@ const About = () => {
     <div className="relative min-h-screen overflow-hidden bg-black" onClick={handleClick}>
       {/* Audio Element */}
       <audio ref={audioRef} loop>
-        <source src="" type="audio/mpeg" />
+        <source src="https://firebasestorage.googleapis.com/v0/b/chatapp-dae72.appspot.com/o/techcoders%2FMillionaire%20(mp3cut.net).mp352978b12-7679-4c9d-bcdf-56ba3167afcc?alt=media&token=f32c4c46-df7b-4eb4-bc39-6169f0852a87" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
 
@@ -109,7 +109,7 @@ const About = () => {
 
       {/* Animated Text Background */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {['Coder', 'Programmer', 'Software Developer', 'Java', 'C'].map((text, index) => (
+        {['Millionaire', 'Success', 'Luxury', 'Wealth', 'Prosperity'].map((text, index) => (
           <motion.h2
             key={index}
             className="absolute text-4xl font-bold text-yellow-600 opacity-10"
@@ -150,7 +150,7 @@ const About = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="text-4xl font-bold text-yellow-400"
             >
-              Welcome to the World of Nihar
+              Welcome to the Millionaire Mindset of Nihar
             </motion.h1>
           </motion.div>
         )}
@@ -199,7 +199,7 @@ const About = () => {
                 {...fadeInUp}
                 transition={{ delay: 0.6 }}
               >
-                Software Developer
+                Software Developer | Future Millionaire
               </motion.p>
 
               <motion.div
@@ -209,13 +209,12 @@ const About = () => {
                 transition={{ delay: 1, duration: 0.8 }}
               >
                 <motion.p className="text-lg text-yellow-100" {...fadeInUp} transition={{ delay: 1.2 }}>
-  Software Engineer with expertise in full-stack development, cloud technologies, and Java programming. Committed to advancing technology and delivering impactful solutions.
-</motion.p>
+                  Visionary Software Engineer with a millionaire mindset. Skilled in full-stack development, cloud technologies, and Java programming. Building the future of technology while paving the way to financial success.
+                </motion.p>
 
-<motion.p className="text-lg text-yellow-100" {...fadeInUp} transition={{ delay: 1.4 }}>
-  Winner of the Smart India Hackathon 2022, demonstrating a strong ability to tackle complex challenges through determination and skill. Passionate about coding and dedicated to developing innovative solutions.
-</motion.p>
-
+                <motion.p className="text-lg text-yellow-100" {...fadeInUp} transition={{ delay: 1.4 }}>
+                  Winner of the Smart India Hackathon 2022, proving that with determination and skill, any challenge can be conquered. Combining a passion for coding with an entrepreneurial spirit to create innovative solutions and generate wealth.
+                </motion.p>
 
                 <motion.div
                   className="flex justify-center space-x-4 mt-8"
@@ -234,7 +233,7 @@ const About = () => {
                     GitHub
                   </motion.a>
                   <motion.a
-                    href="mailto:your.nihar4569@gmail.com"
+                    href="mailto:your.email@example.com"
                     className="bg-yellow-400 hover:bg-yellow-300 text-black font-bold py-2 px-4 rounded-full transition-all duration-300"
                     whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255, 215, 0, 0.7)' }}
                     whileTap={{ scale: 0.95 }}
@@ -250,7 +249,7 @@ const About = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.8, duration: 0.8 }}
             >
-              Designed and developed by Nihar Ranjan Sahu
+              Designed and developed by Nihar Ranjan Sahu | Future Millionaire
             </motion.p>
           </motion.div>
         )}
