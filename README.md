@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 Backend GitHub Link:- https://github.com/Nihar4569/CareSync-_Backend_Spring
 
 ## Available Scripts
